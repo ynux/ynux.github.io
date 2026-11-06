@@ -23,6 +23,12 @@ to github pages: Follow https://docs.astro.build/en/guides/deploy/github/
 
 - getting a `The collection "project" does not exist or is empty. Please check your content config file for errors.`, or rounding of image edges doesn't have an effect : Kill your server and run `npm run dev` again
 
+## Getting it to run on My Machine
+
+On a MacBook Air with M4 processor: 
+
+1. Install Node.js as on [https://nodejs.org/en/download] . I use these versions as of Oct 2026: node v24.22.1 (npm v11.19.1)
+2. `npm install` 
 
 ## Astro Starter Kit: Basics (not Suny's documentation)
 

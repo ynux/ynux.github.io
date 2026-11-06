@@ -1,6 +1,7 @@
 ---
 import ButtonLink from "../components/ButtonLink.astro";
 import Section from "../components/Section.astro";
+import DownloadGroup from "../components/DownloadGroup.astro";
 ---
 
 <Section id="header">
@@ -23,23 +24,16 @@ import Section from "../components/Section.astro";
       of the story, and CI/CD is where technology and processes converge.
     </p>
     <div class="button-container">
-      <ButtonLink
-        href="./resume_kim_202607.pdf"
-        text="Download resume"
-        variant="secondary"
-        isDownload={true}
-      />
-      <ButtonLink
-        href="./lebenslauf_kim_202607.pdf"
-        text="Lebenslauf herunterladen"
-        variant="secondary"
-        isDownload={true}
-      />
-      <ButtonLink
-        href="./projektliste_202607.pdf"
-        text="Projektliste herunterladen"
-        variant="secondary"
-        isDownload={true}
+  <span class="downloads-heading">Downloads</span>
+<DownloadGroup
+  label="Resume"
+  en="./resume_kim_202607.pdf"
+  de="./lebenslauf_kim_202607.pdf"
+/>
+<DownloadGroup
+  label="Project list"
+  en="./projectlist_kim_202607.pdf"
+  de="./projektliste_202607.pdf"
       />
     </div>
   </header>
@@ -65,14 +59,21 @@ import Section from "../components/Section.astro";
         color: var(--primary);
       }
     }
-
-    .button-container {
-      display: flex;
-      gap: 10px;
+    .downloads-heading {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--primary);
     }
 
+    .button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
     .description {
-      line-height: 28px;
       color: var(--dark);
       margin-bottom: 30px;
     }
@@ -88,11 +89,4 @@ import Section from "../components/Section.astro";
         }
       }
     }
-
-    @media (max-width: 600px) {
-      .button-container {
-        flex-direction: column;
-      }
-    }
-  }
 </style>

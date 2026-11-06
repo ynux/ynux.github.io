@@ -1,0 +1,42 @@
+---
+interface Props {
+  label: string;
+  en: string;
+  de: string;
+}
+const { label, en, de } = Astro.props;
+---
+
+<div class="download-row">
+  <span class="label">{label}</span>
+  <a href={en} download hreflang="en" aria-label={`Download ${label} (English)`}>EN</a>
+  <a href={de} download hreflang="de" aria-label={`Download ${label} (Deutsch)`}>DE</a>
+</div>
+
+<style>
+  .download-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .label {
+    width: 7.5em;
+    color: var(--dark);
+  }
+  a {
+    padding: 2px 12px;
+    border: 1px solid var(--primary);
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: var(--primary);
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+  }
+  a:hover,
+  a:focus-visible {
+    background: var(--primary);
+    color: var(--white);
+  }
+</style>
