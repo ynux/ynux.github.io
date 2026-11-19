@@ -5,12 +5,14 @@ interface Props {
   de: string;
 }
 const { label, en, de } = Astro.props;
+const enFileName = en.split("/").pop();
+const deFileName = de.split("/").pop();
 ---
 
 <div class="download-row">
   <span class="label">{label}</span>
-  <a href={en} download hreflang="en" aria-label={`Download ${label} (English)`}>EN</a>
-  <a href={de} download hreflang="de" aria-label={`Download ${label} (Deutsch)`}>DE</a>
+  <a href={en} download hreflang="en" title={enFileName}  aria-label={`Download ${label} (English)`}>EN</a>
+  <a href={de} download hreflang="de" title={deFileName}  aria-label={`Download ${label} (Deutsch)`}>DE</a>
 </div>
 
 <style>
